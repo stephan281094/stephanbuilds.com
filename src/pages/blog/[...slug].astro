@@ -1,0 +1,44 @@
+---
+import { CollectionEntry, getCollection } from "astro:content";
+import FormattedDate from "../../components/FormattedDate.astro";
+import DefaultLayout from "../../layouts/DefaultLayout.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: post,
+  }));
+}
+
+type Props = CollectionEntry<"blog">;
+
+const { description, heroImage, pubDate, updatedDate, title } =
+  Astro.props.data;
+const { Content } = await Astro.props.render();
+---
+
+<DefaultLayout title={title} description={description}>
+  <article class="mx-auto flex max-w-2xl flex-col gap-5">
+    <div class="hero-image">
+      {
+        heroImage && (
+          <img data-zoomable width={1020} height={510} src={heroImage} alt="" />
+        )
+      }
+    </div>
+    <h1 class="text-3xl">{title}</h1>
+    <!-- <p>{description}</p> -->
+    <!-- <hr /> -->
+    <div class="prose dark:prose-invert">
+      <Content />
+    </div>
+  </article>
+</DefaultLayout>
+
+<script>
+  import mediumZoom from "medium-zoom";
+
+  mediumZoom("[data-zoomable]");
+</script>
