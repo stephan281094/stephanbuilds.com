@@ -11,8 +11,8 @@ const posts = (await getCollection("blog")).sort(
 );
 ---
 
-<DefaultLayout title={`Stephan Builds - ${title}`} description={description}>
-  <main class="container mx-auto max-w-screen-sm space-y-16">
+<DefaultLayout title={`${title} - Stephan Builds`} description={description}>
+  <main class="container mx-auto max-w-2xl space-y-16">
     <div class="m-auto max-w-md space-y-8 text-center leading-normal">
       <h2 class="text-3xl">{title}</h2>
       <p>{description}</p>

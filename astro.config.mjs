@@ -7,4 +7,7 @@ import { defineConfig } from "astro/config";
 export default defineConfig({
   site: "https://stephanbuilds.com",
   integrations: [mdx(), sitemap(), tailwind()],
+  experimental: {
+    assets: true,
+  },
 });
