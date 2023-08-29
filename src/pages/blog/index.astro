@@ -21,7 +21,7 @@ const posts = (await getCollection("blog")).sort(
       {
         posts.map((post) => (
           <>
-            <a href={`/blog/${post.slug}`} class="flex flex-col gap-2 py-5">
+            <a class="flex flex-col gap-2 py-5" href={`/blog/${post.slug}`} rel="prefetch-intent">
               <span class="flex-1 text-lg text-gray-800 dark:text-gray-200">
                 {post.data.title}
               </span>
