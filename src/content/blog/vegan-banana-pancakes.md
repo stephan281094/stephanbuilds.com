@@ -3,7 +3,7 @@ title: "Vegan Banana Pancakes"
 description: "A delicious and healthy recipe to make delicious banana pancakes"
 pubDate: "Jan 28 2021"
 hero:
-  src: "../../assets/pancakes.jpg"
+  src: "../../assets/images/pancakes.jpg"
   caption: "The pancakes covered with banana, blueberries and strawberries"
 ---
 

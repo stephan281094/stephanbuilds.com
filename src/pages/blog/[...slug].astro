@@ -7,19 +7,26 @@ import DefaultLayout from "../../layouts/DefaultLayout.astro";
 export async function getStaticPaths() {
   const posts = await getCollection("blog");
 
-  return posts.map((post) => ({
-    params: { slug: post.slug },
-    props: post,
-  }));
+  return posts
+    .filter((post) => !post.data.draft)
+    .map((post) => ({
+      params: { slug: post.slug },
+      props: post,
+    }));
 }
 
 type Props = CollectionEntry<"blog">;
 
+const { slug } = Astro.props;
 const { description, hero, pubDate, title } = Astro.props.data;
 const { Content } = await Astro.props.render();
 ---
 
-<DefaultLayout title={`${title} - Stephan Builds`} description={description}>
+<DefaultLayout
+  title={`${title} - Stephan Builds`}
+  description={description}
+  image={`/blog/${slug}.png`}
+>
   <article class="mx-auto flex max-w-2xl flex-col gap-5">
     <div class="hero-image">
       {

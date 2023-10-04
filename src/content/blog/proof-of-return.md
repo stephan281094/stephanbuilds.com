@@ -1,11 +1,12 @@
 ---
-title: "Proof of Return"
-description: "For when you want to travel around the world without a plan"
-pubDate: "Aug 26 2023"
-updatedDate: "Aug 28 2023"
+title: Proof of Return
+description: For when you want to travel around the world without a plan
+pubDate: Aug 26 2023
+updatedDate: Aug 28 2023
 hero:
-  src: "../../assets/atlanta.jpg"
-  caption: "The Delta plane at Atlanta airport during sunrise"
+  src: ../../assets/images/atlanta.jpg
+  caption: The Delta plane at Atlanta airport during sunrise
+draft: true
 ---
 
 Last year, I quit my job and decided to travel through Latin America for 3

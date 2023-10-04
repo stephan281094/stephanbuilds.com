@@ -6,9 +6,9 @@ const title = "Blog";
 const description =
   "A collections of thoughts, either related to animal rights, philosophy, minimalism or programming.";
 
-const posts = (await getCollection("blog")).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
+const posts = (await getCollection("blog"))
+  .filter((post) => !post.data.draft)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
 <DefaultLayout title={`${title} - Stephan Builds`} description={description}>
@@ -20,16 +20,18 @@ const posts = (await getCollection("blog")).sort(
     <div class="flex flex-col divide-y dark:divide-gray-800">
       {
         posts.map((post) => (
-          <>
-            <a class="flex flex-col gap-2 py-5" href={`/blog/${post.slug}`} rel="prefetch-intent">
-              <span class="flex-1 text-lg text-gray-800 dark:text-gray-200">
-                {post.data.title}
-              </span>
-              <div class="text-gray-600 dark:text-gray-400">
-                {post.data.description}
-              </div>
-            </a>
-          </>
+          <a
+            class="flex flex-col gap-2 py-5"
+            href={`/blog/${post.slug}`}
+            rel="prefetch-intent"
+          >
+            <span class="flex-1 text-lg text-gray-800 dark:text-gray-200">
+              {post.data.title}
+            </span>
+            <div class="text-gray-600 dark:text-gray-400">
+              {post.data.description}
+            </div>
+          </a>
         ))
       }
     </div>
