@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/stephan281094
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://stephandevries.com
+  * I am stephan281094 (https://keybase.io/stephan281094) on keybase.
+  * I have a public key ASDFWunGCi1tSEZwRJbRrfdTi0w2lH9Wp2xYWwCD1ebh_go
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120c55ae9c60a2d6d4846704496d1adf7538b4c36947f56a76c585b0083d5e6e1fe0a",
+      "host": "keybase.io",
+      "kid": "0120c55ae9c60a2d6d4846704496d1adf7538b4c36947f56a76c585b0083d5e6e1fe0a",
+      "uid": "564adf6dca3fbc35bb0cad6155d7e319",
+      "username": "stephan281094"
+    },
+    "merkle_root": {
+      "ctime": 1640215096,
+      "hash": "8972653e6e75c99d748a612c209b1ec642ce341f6b20db7579da53ab94c4215867be2e25260916aee6a63b62e9a38dd7dc45f7bbd80afda2dd2e72c6a7603dc0",
+      "hash_meta": "d0796aed3f7a3b28cc9723fe077ba99589d33629ec0ac5c56c67d19f8da37287",
+      "seqno": 21489194
+    },
+    "service": {
+      "entropy": "B7EjutW3qw83M1OmjMxQ0F+A",
+      "hostname": "stephandevries.com",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "5.9.0"
+  },
+  "ctime": 1640215130,
+  "expire_in": 504576000,
+  "prev": "c32f083e02139d3cda506ddfbecd83a9dd172ff4b3da6ba12ab62f25dff55c01",
+  "seqno": 15,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgxVrpxgotbUhGcESW0a33U4tMNpR/VqdsWFsAg9Xm4f4Kp3BheWxvYWTESpcCD8Qgwy8IPgITnTzaUG3fvs2Dqd0XL/Sz2muhKrYvJd/1XAHEIDOf2IdoAD9ALvHGo7v6GkaXVDrNpWZBKy3CUceh2rjnAgHCo3NpZ8RAsXNrQYJjfeXnuvo2hFil+PXYUpi+i8p3b7qT9RjocYrsIsdV8eH6iqH4wjCT+tQf1/gW7s0qHuX/WNe3zfgbAKhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIBC8yg/lJtDEGzrPtiipn9WDUyYVpqg54zEDfGurAl0Co3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/stephan281094
+
+==================================================================
