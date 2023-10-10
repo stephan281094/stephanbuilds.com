@@ -4,7 +4,7 @@ description: For when you want to travel around the world without a plan
 pubDate: Aug 26 2023
 updatedDate: Aug 28 2023
 hero:
-  src: ../../assets/images/atlanta.jpg
+  src: ../../assets/images/proof-of-return.jpg
   caption: The Delta plane at Atlanta airport during sunrise
 draft: true
 ---

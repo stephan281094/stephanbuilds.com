@@ -1,4 +1,4 @@
-import type { APIRoute } from "astro";
+import type { APIContext } from "astro";
 import { getCollection } from "astro:content";
 import { generateOgImage } from "../../lib/satori";
 
@@ -11,7 +11,7 @@ export async function getStaticPaths() {
   }));
 }
 
-export const get: APIRoute = async function get({ props }) {
+export async function GET({ props }: APIContext) {
   const ogImage = await generateOgImage({
     title: props.data.title,
     description: props.data.description,
@@ -22,4 +22,4 @@ export const get: APIRoute = async function get({ props }) {
       "Content-Type": "image/png",
     },
   });
-};
+}

@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import { CollectionEntry, getCollection } from "astro:content";
+import { getCollection } from "astro:content";
 import FormattedDate from "../../components/FormattedDate.astro";
 import DefaultLayout from "../../layouts/DefaultLayout.astro";
 
@@ -14,8 +14,6 @@ export async function getStaticPaths() {
       props: post,
     }));
 }
-
-type Props = CollectionEntry<"blog">;
 
 const { slug } = Astro.props;
 const { description, hero, pubDate, title } = Astro.props.data;
