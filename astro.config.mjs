@@ -12,7 +12,4 @@ export default defineConfig({
     ? `https://${process.env.VERCEL_URL}`
     : "http://localhost:3000",
   integrations: [mdx(), sitemap(), tailwind(), prefetch(), react()],
-  experimental: {
-    assets: true,
-  },
 });
