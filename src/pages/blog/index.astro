@@ -11,7 +11,7 @@ const posts = (await getCollection("blog"))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
-<DefaultLayout title={`${title} - Stephan Builds`} description={description}>
+<DefaultLayout title={title} description={description}>
   <main class="container mx-auto max-w-2xl space-y-16">
     <div class="m-auto max-w-md space-y-8 text-center leading-normal">
       <h1 class="text-3xl">{title}</h1>
