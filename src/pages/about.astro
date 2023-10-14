@@ -1,15 +1,22 @@
 ---
+import SeedlingIcon from "../components/SeedlingIcon.astro";
 import DefaultLayout from "../layouts/DefaultLayout.astro";
+import { getEntry } from "astro:content";
+
+const about = await getEntry("pages", "about");
+const { Content } = await about.render();
 ---
 
 <DefaultLayout title="About">
-  <main class="flex w-full flex-1 flex-col pb-16 text-center leading-normal">
-    <div class="m-auto max-w-md space-y-8">
-      <h1 class="text-3xl">About. Coming soon.</h1>
-      <p>
-        Get to know me better, on this page I'll properly introduce myself and
-        tell you something about me.
-      </p>
+  <main
+    class="mx-auto flex w-full max-w-[65ch] flex-col gap-8 py-12 leading-normal"
+  >
+    <div class="flex flex-col gap-8 px-6">
+      <h1 class="text-3xl">About</h1>
+      <div class="prose dark:prose-invert">
+        <Content />
+      </div>
+      <SeedlingIcon />
     </div>
   </main>
 </DefaultLayout>

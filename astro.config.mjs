@@ -9,5 +9,8 @@ import { SITE_URL } from "./src/consts";
 // https://astro.build/config
 export default defineConfig({
   site: SITE_URL,
+  image: {
+    domains: ["picsum.photos"],
+  },
   integrations: [mdx(), sitemap(), tailwind(), prefetch(), react()],
 });

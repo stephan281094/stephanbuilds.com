@@ -1,27 +1,43 @@
 ---
 import { SITE_TITLE } from "../consts";
+const pathname = new URL(Astro.request.url).pathname;
+const [page] = pathname.split("/").filter(Boolean);
 ---
 
-<nav class="flex w-full flex-row space-x-4 sm:space-x-12">
-  <a
-    class="mr-auto underline-offset-4 hover:underline"
-    href="/"
-    rel="prefetch-intent"
-  >
-    {SITE_TITLE}
-  </a>
-  <a
-    class="underline-offset-4 hover:underline"
-    href="/blog"
-    rel="prefetch-intent"
-  >
-    Blog
-  </a>
-  <a
-    class="underline-offset-4 hover:underline"
-    href="/about"
-    rel="prefetch-intent"
-  >
-    About
-  </a>
+<nav class="sticky top-0 w-full md:mt-12">
+  <div class="container mx-auto md:px-8">
+    <div
+      class="flex flex-row gap-4 bg-background/50 p-4 backdrop-blur-lg sm:rounded-2xl"
+    >
+      <div class="mr-auto flex flex-row">
+        <a
+          class="rounded px-2 py-1 hover:bg-foreground/10"
+          href="/"
+          rel="prefetch-intent"
+        >
+          {SITE_TITLE}
+        </a>
+      </div>
+      <div class="flex flex-row gap-4">
+        <a
+          class="rounded px-2 py-1 hover:bg-foreground/10 data-[active]:bg-foreground/10"
+          data-active={page === "projects"}
+          href="/projects"
+          rel="prefetch-intent">Projects</a
+        >
+        <a
+          class="rounded px-2 py-1 hover:bg-foreground/10 data-[active]:bg-foreground/10"
+          data-active={page === "blog"}
+          href="/blog"
+          rel="prefetch-intent">Blog</a
+        >
+        <a
+          class="rounded px-2 py-1 hover:bg-foreground/10 data-[active]:bg-foreground/10"
+          data-active={page === "about"}
+          href="/about"
+          rel="prefetch-intent">About</a
+        >
+      </div>
+    </div>
+  </div>
 </nav>

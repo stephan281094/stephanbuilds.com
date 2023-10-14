@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import DefaultLayout from "../../layouts/DefaultLayout.astro";
+import ListItem from "../../components/ListItem.astro";
 
 const title = "Blog";
 const description =
@@ -12,26 +13,23 @@ const posts = (await getCollection("blog"))
 ---
 
 <DefaultLayout title={title} description={description}>
-  <main class="container mx-auto max-w-2xl space-y-16">
-    <div class="m-auto max-w-md space-y-8 text-center leading-normal">
+  <main
+    class="mx-auto flex w-full max-w-[65ch] flex-col gap-8 py-12 leading-normal"
+  >
+    <div class="flex flex-col gap-8 px-6">
       <h1 class="text-3xl">{title}</h1>
-      <p>{description}</p>
+      <p class="text-balance">{description}</p>
     </div>
-    <div class="flex flex-col divide-y dark:divide-gray-800">
+
+    <div class="flex flex-col gap-4 px-2">
       {
         posts.map((post) => (
-          <a
-            class="flex flex-col gap-2 py-5"
+          <ListItem
             href={`/blog/${post.slug}`}
-            rel="prefetch-intent"
-          >
-            <span class="flex-1 text-lg text-gray-800 dark:text-gray-200">
-              {post.data.title}
-            </span>
-            <div class="text-gray-600 dark:text-gray-400">
-              {post.data.description}
-            </div>
-          </a>
+            title={post.data.title}
+            description={post.data.description}
+            imageUrl={post.data.hero.src}
+          />
         ))
       }
     </div>

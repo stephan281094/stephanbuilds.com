@@ -1,8 +1,7 @@
 ---
-import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 import FormattedDate from "../../components/FormattedDate.astro";
-import DefaultLayout from "../../layouts/DefaultLayout.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog");
@@ -16,49 +15,20 @@ export async function getStaticPaths() {
 }
 
 const { slug } = Astro.props;
-const { description, hero, pubDate, title } = Astro.props.data;
+const post = Astro.props.data;
 const { Content } = await Astro.props.render();
 ---
 
-<DefaultLayout
-  title={title}
-  description={description}
+<ArticleLayout
+  title={post.title}
+  description={post.description}
+  hero={post.hero}
   image={`/blog/${slug}.png`}
 >
-  <article class="mx-auto flex max-w-2xl flex-col gap-5">
-    <div class="hero-image">
-      {
-        hero && (
-          <div class="flex aspect-[2/1] select-none rounded bg-gray-100 dark:bg-gray-900">
-            <Image
-              class="rounded"
-              data-zoomable
-              width={1020}
-              height={510}
-              src={hero.src}
-              alt={hero.caption}
-              loading="eager"
-            />
-          </div>
-        )
-      }
-    </div>
-    <div>
-      <h1 class="text-3xl">{title}</h1>
-      <FormattedDate class="text-gray-600 dark:text-gray-400" date={pubDate!} />
-    </div>
-    <div class="prose dark:prose-invert">
-      <hr />
-      <Content />
-    </div>
-  </article>
-
-  <script>
-    import mediumZoom from "medium-zoom";
-
-    mediumZoom("[data-zoomable]", {
-      background: "hsl(var(--background))",
-      margin: 16,
-    });
-  </script>
-</DefaultLayout>
+  <FormattedDate
+    class="text-gray-600 dark:text-gray-400"
+    date={post.pubDate}
+    slot="subtitle"
+  />
+  <Content />
+</ArticleLayout>

@@ -1,8 +1,14 @@
 ---
-const { class: className } = Astro.props;
+const { id, class: className } = Astro.props;
 ---
 
-<svg width={36} viewBox="0 0 512 512" xml:space="preserve" class={className}>
+<svg
+  width={36}
+  viewBox="0 0 512 512"
+  xml:space="preserve"
+  class={className}
+  id={id}
+>
   <path
     d="M366.313,58.34c-32.779-4.382-64.158,2.121-86.979,6.297V35.006c0-5.948-4.825-10.766-10.774-10.766h-25.13
 		c-5.94,0-10.765,4.817-10.765,10.766v29.631c-22.821-4.176-54.2-10.679-86.987-6.297C32.612,73.464,0,152.872,0,246.401

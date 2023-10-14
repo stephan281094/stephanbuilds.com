@@ -1,0 +1,61 @@
+---
+import DefaultLayout from "../../layouts/DefaultLayout.astro";
+import ListItem from "../../components/ListItem.astro";
+import { getCollection } from "astro:content";
+
+const [projectCollection, sideProjectCollection] = await Promise.all([
+  getCollection("projects"),
+  getCollection("side-projects"),
+]);
+
+const projects = projectCollection
+  .filter((project) => !project.data.draft)
+  .sort((a, b) => b.data.id - a.data.id);
+const sideProjects = sideProjectCollection
+  .filter((project) => !project.data.draft)
+  .sort((a, b) => b.data.id - a.data.id);
+---
+
+<DefaultLayout title="Projects">
+  <main
+    class="mx-auto flex w-full max-w-[65ch] flex-col gap-8 py-12 leading-normal"
+  >
+    <div class="flex flex-col gap-8 px-6">
+      <h1 class="text-3xl">Projects</h1>
+      <p class="text-balance">
+        Projects I've worked on throughout the past 10 years, both
+        professionally and in my spare time.
+      </p>
+    </div>
+    <div class="flex flex-col gap-4 px-2">
+      {
+        projects.map((project) => (
+          <ListItem
+            href={`/projects/${project.slug}`}
+            title={project.data.title}
+            description={project.data.description}
+            imageUrl={project.data.imageUrl}
+          />
+        ))
+      }
+    </div>
+
+    <div class="flex flex-col gap-8">
+      <div class="flex flex-col px-6">
+        <h2 class="text-xl">Side projects</h2>
+      </div>
+      <div class="flex flex-col gap-4 px-2">
+        {
+          sideProjects.map((project) => (
+            <ListItem
+              href={`/projects/${project.slug}`}
+              title={project.data.title}
+              description={project.data.description}
+              imageUrl={project.data.imageUrl}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </main>
+</DefaultLayout>

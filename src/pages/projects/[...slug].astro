@@ -1,0 +1,45 @@
+---
+import { getCollection } from "astro:content";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+
+export async function getStaticPaths() {
+  const [projects, sideProjects] = await Promise.all([
+    getCollection("projects"),
+    getCollection("side-projects"),
+  ]);
+
+  return [...projects, ...sideProjects]
+    .filter((project) => !project.data.draft)
+    .map((project) => ({
+      params: { slug: project.slug },
+      props: project,
+    }));
+}
+
+const project = Astro.props.data;
+const { Content } = await Astro.props.render();
+---
+
+<ArticleLayout
+  title={project.title}
+  description={project.description}
+  hero={{ src: project.imageUrl, caption: "" }}
+>
+  <Fragment slot="subtitle">
+    <span>{project.when}</span>
+    {
+      project.client && (
+        <span>
+          for{" "}
+          <a
+            class="underline underline-offset-2 hover:text-foreground"
+            href={project.client.website}
+          >
+            {project.client.name}
+          </a>
+        </span>
+      )
+    }
+  </Fragment>
+  <Content />
+</ArticleLayout>

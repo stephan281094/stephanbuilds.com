@@ -1,0 +1,24 @@
+---
+import { Image } from "astro:assets";
+const { description, imageUrl, href, title } = Astro.props;
+---
+
+<a
+  class="grid grid-cols-4 gap-4 rounded-lg p-4 hover:bg-foreground/10 md:grid-cols-3 md:gap-8"
+  href={href}
+  rel="prefetch-intent"
+>
+  <Image
+    class="aspect-square rounded-sm object-cover md:aspect-video"
+    src={imageUrl}
+    width="500"
+    height="300"
+    alt=""
+  />
+  <div
+    class="col-span-3 flex flex-col justify-center gap-2 md:col-span-2 md:gap-4"
+  >
+    <span class="text-xl">{title}</span>
+    <p class="line-clamp-2 text-sm text-gray-500 md:text-base">{description}</p>
+  </div>
+</a>

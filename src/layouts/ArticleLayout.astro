@@ -1,0 +1,48 @@
+---
+import { Image } from "astro:assets";
+import DefaultLayout from "./DefaultLayout.astro";
+
+const { description, hero, image, title } = Astro.props;
+---
+
+<DefaultLayout title={title} description={description} image={image}>
+  <article
+    class="mx-auto flex w-full max-w-[65ch] flex-col gap-8 py-12 leading-normal"
+  >
+    <div class="flex flex-col gap-8 px-6">
+      <h1 class="text-3xl">{title}</h1>
+      <div class="text-gray-600 dark:text-gray-400">
+        <slot name="subtitle" />
+      </div>
+      <div class="hero-image">
+        {
+          hero && (
+            <div class="flex aspect-[2/1] select-none rounded bg-gray-100 dark:bg-gray-900">
+              <Image
+                class="rounded-md"
+                data-zoomable
+                width={1020}
+                height={510}
+                src={hero.src}
+                alt={hero.caption}
+                loading="eager"
+              />
+            </div>
+          )
+        }
+      </div>
+      <div class="prose dark:prose-invert">
+        <slot />
+      </div>
+    </div>
+  </article>
+
+  <script>
+    import mediumZoom from "medium-zoom";
+
+    mediumZoom("[data-zoomable]", {
+      background: "hsl(var(--background))",
+      margin: 8,
+    });
+  </script>
+</DefaultLayout>

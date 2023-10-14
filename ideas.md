@@ -10,3 +10,4 @@
 - [ ] Add background animation to homepage
 - [x] Prefetch when hovering links
 - [ ] Github comments
+- [ ] Easter egg on 404 page

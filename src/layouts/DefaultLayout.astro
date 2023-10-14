@@ -16,11 +16,12 @@ const {
     <BaseHead title={title} description={description} image={image} />
   </head>
   <body>
-    <div
-      class="container mx-auto flex min-h-screen flex-col space-y-16 p-8 sm:p-16"
-    >
+    <slot name="before-header" />
+    <div class="relative flex min-h-[100dvh] flex-col">
       <Header />
-      <slot />
+      <div class="container mx-auto flex flex-1 flex-col">
+        <slot />
+      </div>
     </div>
   </body>
 </html>

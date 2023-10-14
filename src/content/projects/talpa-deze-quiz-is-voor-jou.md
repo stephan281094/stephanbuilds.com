@@ -1,0 +1,17 @@
+---
+id: 4
+title: Talpa Deze Quiz is Voor Jou
+when: 2021 - 2022
+description: |
+  For Talpa's new game show Stephan helped create a mobile app where clients
+  could participate. In the app clients could register, join the game to answer
+  trivia questions and win prize money. Built with React.
+imageUrl: https://picsum.photos/seed/talpa-deze-quiz-is-voor-jou/1020/510
+client:
+  name: Talpa
+  website: https://talpanetwork.com
+---
+
+For Talpa's new game show Stephan helped create a mobile app where clients could
+participate. In the app clients could register, join the game to answer trivia
+questions and win prize money. Built with React.

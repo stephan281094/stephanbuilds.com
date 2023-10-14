@@ -1,0 +1,21 @@
+---
+import DefaultLayout from "../layouts/DefaultLayout.astro";
+---
+
+<DefaultLayout title="Page not found">
+  <main
+    class="mx-auto flex w-full max-w-[65ch] flex-col gap-8 py-12 leading-normal"
+  >
+    <div class="flex flex-col gap-8 px-6">
+      <h1 class="text-3xl">Page not found</h1>
+
+      <div class="prose dark:prose-invert">
+        <p>
+          The page could not be found. Maybe <a href="/"
+            >return to the homepage</a
+          >?
+        </p>
+      </div>
+    </div>
+  </main>
+</DefaultLayout>
