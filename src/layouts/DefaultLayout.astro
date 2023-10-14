@@ -3,17 +3,17 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 
-const {
-  title = SITE_TITLE,
-  description = SITE_DESCRIPTION,
-  image,
-} = Astro.props;
+const { title, description = SITE_DESCRIPTION, image } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={title} description={description} image={image} />
+    <BaseHead
+      title={title ? `${title} - ${SITE_TITLE}` : SITE_TITLE}
+      description={description}
+      image={image}
+    />
   </head>
   <body>
     <slot name="before-header" />
