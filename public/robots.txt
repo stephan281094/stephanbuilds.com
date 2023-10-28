@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://stephanbuilds.com/sitemap-index.xml

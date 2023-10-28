@@ -1,8 +1,13 @@
 import { makeHandler } from "@keystatic/astro/api";
-import keystaticConfig from "../../../../keystatic.config";
+import type { APIContext } from "astro";
+import config from "../../../../keystatic.config";
 
-export const all = makeHandler({
-  config: keystaticConfig,
-});
+export const all = ({ ...params }: APIContext) => {
+  if (import.meta.env.MODE === "production") {
+    return params.redirect("/", 307);
+  }
+
+  return makeHandler({ config })(params);
+};
 
 export const prerender = false;

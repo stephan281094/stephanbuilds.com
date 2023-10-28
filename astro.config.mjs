@@ -15,5 +15,13 @@ export default defineConfig({
   image: {
     domains: ["picsum.photos"],
   },
-  integrations: [sitemap(), tailwind(), prefetch(), react(), markdoc()],
+  integrations: [
+    sitemap({
+      filter: (page) => !page.includes("keystatic"),
+    }),
+    tailwind(),
+    prefetch(),
+    react(),
+    markdoc(),
+  ],
 });
