@@ -6,13 +6,20 @@ const projectSchema = z.object({
   description: z.string(),
   draft: z.boolean().optional(),
   imageUrl: z.string(),
+  imageAlt: z.string().optional(),
   when: z.string().or(z.number()),
-  client: z
-    .object({
-      name: z.string(),
-      website: z.string(),
-    })
-    .optional(),
+  client: z.union([
+    z.object({
+      discriminant: z.literal(false),
+    }),
+    z.object({
+      discriminant: z.literal(true),
+      value: z.object({
+        name: z.string(),
+        website: z.string(),
+      }),
+    }),
+  ]),
 });
 
 const blog = defineCollection({
@@ -25,10 +32,8 @@ const blog = defineCollection({
         .string()
         .or(z.date())
         .transform((str) => new Date(str)),
-      hero: z.object({
-        src: image(),
-        caption: z.string(),
-      }),
+      hero: image(),
+      heroAlt: z.string(),
     }),
 });
 

@@ -5,7 +5,7 @@
 - [ ] Add projects page to highlight projects I've worked on (case studies)
 - [ ] Collect page views
 - [x] Optimize images using `astro:assets`
-- [ ] Setup Keystatic
+- [x] Setup Keystatic
 - [-] Dynamically generate OG images
 - [ ] Add background animation to homepage
 - [x] Prefetch when hovering links

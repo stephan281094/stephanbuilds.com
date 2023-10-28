@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-const { description, imageUrl, href, title } = Astro.props;
+const { description, imageUrl, imageAlt = "", href, title } = Astro.props;
 ---
 
 <a
@@ -13,7 +13,7 @@ const { description, imageUrl, href, title } = Astro.props;
     src={imageUrl}
     width="500"
     height="300"
-    alt=""
+    alt={imageAlt}
   />
   <div
     class="col-span-3 flex flex-col justify-center gap-2 md:col-span-2 md:gap-4"

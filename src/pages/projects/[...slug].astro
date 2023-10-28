@@ -23,19 +23,20 @@ const { Content } = await Astro.props.render();
 <ArticleLayout
   title={project.title}
   description={project.description}
-  hero={{ src: project.imageUrl, caption: "" }}
+  hero={project.imageUrl}
+  heroAlt=""
 >
   <Fragment slot="subtitle">
     <span>{project.when}</span>
     {
-      project.client && (
+      project.client.discriminant && (
         <span>
           for{" "}
           <a
             class="underline underline-offset-2 hover:text-foreground"
-            href={project.client.website}
+            href={project.client.value.website}
           >
-            {project.client.name}
+            {project.client.value.name}
           </a>
         </span>
       )

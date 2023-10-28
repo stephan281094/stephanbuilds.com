@@ -14,7 +14,6 @@ export async function getStaticPaths() {
     }));
 }
 
-const { slug } = Astro.props;
 const post = Astro.props.data;
 const { Content } = await Astro.props.render();
 ---
@@ -23,7 +22,8 @@ const { Content } = await Astro.props.render();
   title={post.title}
   description={post.description}
   hero={post.hero}
-  image={`/blog/${slug}.png`}
+  heroAlt={post.heroAlt}
+  image={`/blog/${post.slug}.png`}
 >
   <FormattedDate
     class="text-gray-600 dark:text-gray-400"

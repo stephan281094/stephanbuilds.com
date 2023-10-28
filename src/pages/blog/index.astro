@@ -28,7 +28,8 @@ const posts = (await getCollection("blog"))
             href={`/blog/${post.slug}`}
             title={post.data.title}
             description={post.data.description}
-            imageUrl={post.data.hero.src}
+            imageUrl={post.data.hero}
+            imageAlt={post.data.heroAlt}
           />
         ))
       }

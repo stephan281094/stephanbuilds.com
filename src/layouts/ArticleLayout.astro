@@ -2,7 +2,7 @@
 import { Image } from "astro:assets";
 import DefaultLayout from "./DefaultLayout.astro";
 
-const { description, hero, image, title } = Astro.props;
+const { description, hero, heroAlt = "", image, title } = Astro.props;
 ---
 
 <DefaultLayout title={title} description={description} image={image}>
@@ -23,8 +23,8 @@ const { description, hero, image, title } = Astro.props;
                 data-zoomable
                 width={1020}
                 height={510}
-                src={hero.src}
-                alt={hero.caption}
+                src={hero}
+                alt={heroAlt}
                 loading="eager"
               />
             </div>
