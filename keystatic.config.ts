@@ -31,7 +31,7 @@ const projectSchema = {
 
 export default config({
   storage: {
-    kind: "github",
+    kind: import.meta.env.MODE === "production" ? "github" : "local",
     repo: {
       owner: "stephan281094",
       name: "stephanbuilds.com",
