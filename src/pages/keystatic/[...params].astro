@@ -2,9 +2,9 @@
 import { Keystatic } from "../../../keystatic.page";
 export const prerender = false;
 
-if (import.meta.env.MODE === "production") {
-  return Astro.redirect("/");
-}
+// if (import.meta.env.MODE === "production") {
+//   return Astro.redirect("/");
+// }
 ---
 
 <Keystatic client:only />
