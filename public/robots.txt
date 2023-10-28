@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /keystatic
 
 Sitemap: https://stephanbuilds.com/sitemap-index.xml
