@@ -54,3 +54,60 @@ appending to this document.
 View my publicly-auditable identity here: https://keybase.io/stephan281094
 
 ==================================================================
+
+==================================================================
+https://keybase.io/stephan281094
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://stephanbuilds.com
+  * I am stephan281094 (https://keybase.io/stephan281094) on keybase.
+  * I have a public key ASC-Uc_nomcB8csMBf3Gep9tMe6wHGoTd_EKNQUmJBXyXwo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120c55ae9c60a2d6d4846704496d1adf7538b4c36947f56a76c585b0083d5e6e1fe0a",
+      "host": "keybase.io",
+      "kid": "0120be51cfe7a26701f1cb0c05fdc67a9f6d31eeb01c6a1377f10a3505262415f25f0a",
+      "uid": "564adf6dca3fbc35bb0cad6155d7e319",
+      "username": "stephan281094"
+    },
+    "merkle_root": {
+      "ctime": 1698602094,
+      "hash": "27e906a9fd29af830cd3a014bf5e6e656e082062c82df520faa7b06fbe17a57e6120b9cbb3a2f515f476d3930cbc003e6bd4bb01e57d8bc9d88063fa08712a2c",
+      "hash_meta": "cbf93ca6de8782f49c12752cda2f93dfeb688657b8c32c6b6b125a10effdedb4",
+      "seqno": 25084798
+    },
+    "service": {
+      "entropy": "SdDN0VcqlCSDhX/weus0jKTQ",
+      "hostname": "stephanbuilds.com",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "6.2.4"
+  },
+  "ctime": 1698602137,
+  "expire_in": 504576000,
+  "prev": "e1c5632aca569a0885f363cbd4cadc2f6347207bcce639e7ebaefd1d2ccb138c",
+  "seqno": 25,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgvlHP56JnAfHLDAX9xnqfbTHusBxqE3fxCjUFJiQV8l8Kp3BheWxvYWTESpcCGcQg4cVjKspWmgiF82PL1MrcL2NHIHvM5jnn6679HSzLE4zEIFmXBf6HFEmc3Ih/oCOE+r/IO6SvooAL5fJHALIZymOuAgHCo3NpZ8RAlXekuIBYem51rFQ1Ly/wXnEEGCmJDsn6rTXtOJD1fDAZawrXpBAsofxL4vrPu69SZpYvaDl4r93WkbTHcGfpC6hzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEICuRgi1ucBmmRqxcS2noKnioSbOR3QJzeIHLziDcco0Do3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/stephan281094
+
+==================================================================
