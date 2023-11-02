@@ -1,12 +1,10 @@
 ---
-import HalloweenIcon from "../components/HalloweenIcon.astro";
-import Spooky from "../components/Spooky.astro";
+import SeedlingIcon from "../components/SeedlingIcon.astro";
 import { SITE_DESCRIPTION } from "../consts";
 import DefaultLayout from "../layouts/DefaultLayout.astro";
 ---
 
 <DefaultLayout>
-  <Spooky slot="before-header" />
   <main class="flex flex-1 flex-col p-8 md:p-12">
     <div
       class="my-auto inline max-w-3xl rounded-2xl px-2 py-4 pb-16 text-3xl leading-normal"
@@ -14,42 +12,9 @@ import DefaultLayout from "../layouts/DefaultLayout.astro";
       <span set:html={SITE_DESCRIPTION} />
     </div>
     <div class="flex items-end">
-      <div
-        class="hidden rounded bg-background/50 px-2 py-1 text-foreground/50 backdrop-blur-lg dark:block"
-      >
-        Ghost cursor by <a
-          class="underline underline-offset-2 hover:text-foreground/100"
-          href="https://codepen.io/ksenia-k/pen/yLGxEKb"
-        >
-          Ksenia Kondrashova
-        </a>
-      </div>
-      <HalloweenIcon
-        id="pumpkin"
+      <SeedlingIcon
         class="ml-auto flex-shrink-0 fill-[currentColor] stroke-2"
       />
     </div>
   </main>
-
-  <script is:inline src="https://unpkg.com/@popperjs/core@2"></script>
-  <script is:inline src="https://unpkg.com/tippy.js@6"></script>
-  <script>
-    const [instance] = tippy("#pumpkin", {
-      content: "Turn on dark mode for a surprise! 👻",
-      placement: "top-start",
-    });
-    const query = window.matchMedia("(prefers-color-scheme: dark)");
-
-    if (query.matches) {
-      instance.disable();
-    }
-
-    query.addEventListener("change", (event) => {
-      if (event.matches) {
-        instance.disable();
-      } else {
-        instance.enable();
-      }
-    });
-  </script>
 </DefaultLayout>
