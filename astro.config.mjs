@@ -10,7 +10,14 @@ import { SITE_URL } from "./src/consts";
 // https://astro.build/config
 export default defineConfig({
   site: SITE_URL,
-  adapter: vercel(),
+  adapter: vercel({
+    speedInsights: {
+      enabled: true,
+    },
+    webAnalytics: {
+      enabled: true,
+    },
+  }),
   output: "hybrid",
   image: {
     domains: ["picsum.photos"],
