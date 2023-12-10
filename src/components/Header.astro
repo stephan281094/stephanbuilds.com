@@ -13,7 +13,7 @@ const [page] = pathname.split("/").filter(Boolean);
         <a
           class="rounded px-2 py-1 hover:bg-foreground/10"
           href="/"
-          rel="prefetch-intent"
+          data-astro-prefetch="viewport"
         >
           {SITE_TITLE}
         </a>
@@ -23,19 +23,19 @@ const [page] = pathname.split("/").filter(Boolean);
           class="rounded px-2 py-1 hover:bg-foreground/10 data-[active]:bg-foreground/10"
           data-active={page === "projects"}
           href="/projects"
-          rel="prefetch-intent">Projects</a
+          data-astro-prefetch="viewport">Projects</a
         >
         <a
           class="rounded px-2 py-1 hover:bg-foreground/10 data-[active]:bg-foreground/10"
           data-active={page === "blog"}
           href="/blog"
-          rel="prefetch-intent">Blog</a
+          data-astro-prefetch="viewport">Blog</a
         >
         <a
           class="rounded px-2 py-1 hover:bg-foreground/10 data-[active]:bg-foreground/10"
           data-active={page === "about"}
           href="/about"
-          rel="prefetch-intent">About</a
+          data-astro-prefetch="viewport">About</a
         >
       </div>
     </div>

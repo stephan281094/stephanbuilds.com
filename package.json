@@ -13,7 +13,6 @@
   "dependencies": {
     "@astrojs/markdoc": "^0.8.0",
     "@astrojs/node": "^7.0.0",
-    "@astrojs/prefetch": "^0.4.1",
     "@astrojs/react": "^3.0.7",
     "@astrojs/rss": "^4.0.1",
     "@astrojs/sitemap": "^3.0.3",

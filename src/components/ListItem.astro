@@ -6,7 +6,7 @@ const { description, imageUrl, imageAlt = "", href, title } = Astro.props;
 <a
   class="grid grid-cols-4 gap-4 rounded-lg p-4 hover:bg-foreground/10 md:grid-cols-3 md:gap-8"
   href={href}
-  rel="prefetch-intent"
+  data-astro-prefetch
 >
   <Image
     class="aspect-square rounded-sm object-cover md:aspect-video"

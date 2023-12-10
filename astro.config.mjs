@@ -1,5 +1,4 @@
 import markdoc from "@astrojs/markdoc";
-import prefetch from "@astrojs/prefetch";
 import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
@@ -23,12 +22,12 @@ export default defineConfig({
   image: {
     domains: ["picsum.photos"],
   },
+  prefetch: true,
   integrations: [
     sitemap({
       filter: (page) => !page.includes("keystatic"),
     }),
     tailwind(),
-    prefetch(),
     react(),
     markdoc(),
     keystatic(),
