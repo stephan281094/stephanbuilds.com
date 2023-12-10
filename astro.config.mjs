@@ -6,6 +6,7 @@ import tailwind from "@astrojs/tailwind";
 import vercel from "@astrojs/vercel/serverless";
 import { defineConfig } from "astro/config";
 import { SITE_URL } from "./src/consts";
+import keystatic from "@keystatic/astro";
 
 // https://astro.build/config
 export default defineConfig({
@@ -30,5 +31,6 @@ export default defineConfig({
     prefetch(),
     react(),
     markdoc(),
+    keystatic(),
   ],
 });
