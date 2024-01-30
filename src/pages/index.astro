@@ -1,16 +1,22 @@
 ---
 import SeedlingIcon from "../components/SeedlingIcon.astro";
+import { LOCATION } from "../consts";
 import DefaultLayout from "../layouts/DefaultLayout.astro";
 ---
 
 <DefaultLayout>
   <main class="flex flex-1 flex-col p-8 md:p-12">
     <div
-      class="my-auto inline max-w-3xl rounded-2xl px-2 py-4 pb-16 text-3xl leading-normal"
+      class="my-auto inline-flex max-w-3xl flex-col gap-8 rounded-2xl px-2 py-4 pb-16 text-3xl leading-normal"
     >
-      Hey, I'm Stephan, a freelance web developer based in Amsterdam, passionate
-      about building <span class="whitespace-nowrap">high-quality websites</span
-      >.
+      <p>
+        Hey, I'm Stephan, a freelance web developer passionate about building <span
+          class="whitespace-nowrap">high-quality websites</span
+        >.
+      </p>
+      <p class="text-xl">
+        Working remotely in <span class="italic">{LOCATION}</span>
+      </p>
     </div>
     <div class="flex items-end">
       <SeedlingIcon
