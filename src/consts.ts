@@ -1,4 +1,4 @@
-export const LOCATION = "Lleida, Spain";
+export const LOCATION = "Barcelona, Spain";
 
 export const SITE_URL = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
