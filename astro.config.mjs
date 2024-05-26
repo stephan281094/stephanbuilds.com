@@ -11,9 +11,6 @@ import keystatic from "@keystatic/astro";
 export default defineConfig({
   site: SITE_URL,
   adapter: vercel({
-    speedInsights: {
-      enabled: true,
-    },
     webAnalytics: {
       enabled: true,
     },

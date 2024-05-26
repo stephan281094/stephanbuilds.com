@@ -21,6 +21,7 @@
     "@keystatic/core": "^0.5.11",
     "@types/react": "^18.2.79",
     "@types/react-dom": "^18.2.25",
+    "@vercel/speed-insights": "^1.0.11",
     "astro": "^4.6.2",
     "date-fns": "^3.6.0",
     "medium-zoom": "^1.1.0",
