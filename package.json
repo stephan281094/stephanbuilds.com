@@ -18,9 +18,9 @@
     "@astrojs/tailwind": "^5.1.2",
     "@astrojs/vercel": "^7.8.2",
     "@keystatic/astro": "^5.0.3",
-    "@keystatic/core": "^0.5.41",
+    "@keystatic/core": "^0.5.42",
     "@vercel/speed-insights": "^1.1.0",
-    "astro": "^4.16.14",
+    "astro": "^4.16.16",
     "date-fns": "^4.1.0",
     "medium-zoom": "^1.1.0",
     "react": "^18.3.1",
@@ -33,7 +33,7 @@
     "@tailwindcss/typography": "^0.5.15",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
-    "prettier": "^3.3.3",
+    "prettier": "^3.4.1",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.6.9"
   }
