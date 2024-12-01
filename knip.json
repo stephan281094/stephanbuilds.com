@@ -1,0 +1,3 @@
+{
+  "ignore": ["markdoc.config.mjs", "keystatic.config.ts"]
+}
