@@ -2,7 +2,7 @@ import markdoc from "@astrojs/markdoc";
 import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
-import vercel from "@astrojs/vercel/serverless";
+import vercel from "@astrojs/vercel";
 import { defineConfig } from "astro/config";
 import { SITE_URL } from "./src/consts";
 import keystatic from "@keystatic/astro";
@@ -15,7 +15,7 @@ export default defineConfig({
       enabled: true,
     },
   }),
-  output: "hybrid",
+  output: "static",
   image: {
     domains: ["picsum.photos"],
   },

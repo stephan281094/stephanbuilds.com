@@ -18,19 +18,19 @@ const [page] = pathname.split("/").filter(Boolean);
       </div>
       <div class="flex flex-row gap-4">
         <a
-          class="rounded px-2 py-1 hover:bg-foreground/10 data-[active]:bg-foreground/10"
+          class="rounded px-2 py-1 hover:bg-foreground/10 data-[active=true]:bg-foreground/10"
           data-active={page === "projects"}
           href="/projects"
           data-astro-prefetch="viewport">Projects</a
         >
         <a
-          class="rounded px-2 py-1 hover:bg-foreground/10 data-[active]:bg-foreground/10"
+          class="rounded px-2 py-1 hover:bg-foreground/10 data-[active=true]:bg-foreground/10"
           data-active={page === "blog"}
           href="/blog"
           data-astro-prefetch="viewport">Blog</a
         >
         <a
-          class="rounded px-2 py-1 hover:bg-foreground/10 data-[active]:bg-foreground/10"
+          class="rounded px-2 py-1 hover:bg-foreground/10 data-[active=true]:bg-foreground/10"
           data-active={page === "about"}
           href="/about"
           data-astro-prefetch="viewport">About</a
