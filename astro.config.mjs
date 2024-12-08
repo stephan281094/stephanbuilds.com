@@ -16,6 +16,9 @@ export default defineConfig({
     },
   }),
   output: "static",
+  experimental: {
+    responsiveImages: true,
+  },
   image: {
     domains: ["picsum.photos"],
   },
