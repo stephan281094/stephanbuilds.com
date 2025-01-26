@@ -9,7 +9,7 @@ const [page] = pathname.split("/").filter(Boolean);
     <div class="flex flex-row gap-4 p-4 sm:rounded-2xl">
       <div class="mr-auto flex flex-row">
         <a
-          class="whitespace-nowrap rounded px-2 py-1 hover:bg-foreground/10"
+          class="hover:bg-foreground/10 rounded-sm px-2 py-1 whitespace-nowrap"
           href="/"
           data-astro-prefetch="viewport"
         >
@@ -18,19 +18,19 @@ const [page] = pathname.split("/").filter(Boolean);
       </div>
       <div class="flex flex-row gap-4">
         <a
-          class="rounded px-2 py-1 hover:bg-foreground/10 data-[active=true]:bg-foreground/10"
+          class="hover:bg-foreground/10 data-[active=true]:bg-foreground/10 rounded-sm px-2 py-1"
           data-active={page === "projects"}
           href="/projects"
           data-astro-prefetch="viewport">Projects</a
         >
         <a
-          class="rounded px-2 py-1 hover:bg-foreground/10 data-[active=true]:bg-foreground/10"
+          class="hover:bg-foreground/10 data-[active=true]:bg-foreground/10 rounded-sm px-2 py-1"
           data-active={page === "blog"}
           href="/blog"
           data-astro-prefetch="viewport">Blog</a
         >
         <a
-          class="rounded px-2 py-1 hover:bg-foreground/10 data-[active=true]:bg-foreground/10"
+          class="hover:bg-foreground/10 data-[active=true]:bg-foreground/10 rounded-sm px-2 py-1"
           data-active={page === "about"}
           href="/about"
           data-astro-prefetch="viewport">About</a

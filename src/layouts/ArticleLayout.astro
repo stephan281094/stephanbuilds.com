@@ -17,7 +17,7 @@ const { description, hero, heroAlt = "", image, title } = Astro.props;
       <div class="hero-image">
         {
           hero && (
-            <div class="flex aspect-[2/1] select-none rounded bg-gray-100 dark:bg-gray-900">
+            <div class="flex aspect-[2/1] rounded-sm bg-gray-100 select-none dark:bg-gray-900">
               <Image
                 class="rounded-md"
                 data-zoomable
@@ -35,6 +35,11 @@ const { description, hero, heroAlt = "", image, title } = Astro.props;
       <div class="prose dark:prose-invert">
         <slot />
       </div>
+      <div
+        class="pointer-events-none fixed inset-0 grid h-full w-full place-items-center"
+      >
+        <div class="zoom-container h-full w-full max-w-252 md:p-6"></div>
+      </div>
     </div>
   </article>
 
@@ -42,8 +47,8 @@ const { description, hero, heroAlt = "", image, title } = Astro.props;
     import mediumZoom from "medium-zoom";
 
     mediumZoom("[data-zoomable]", {
-      background: "hsl(var(--background))",
-      margin: 8,
+      background: "var(--color-background)",
+      container: ".zoom-container",
     });
   </script>
 </DefaultLayout>
