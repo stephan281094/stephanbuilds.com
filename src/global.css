@@ -1,19 +1,9 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
-@layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --background: 240 10% 3.9%;
-      --foreground: 0 0% 98%;
-    }
-  }
+@theme {
+  --color-background: light-dark(hsl(0 0% 100%), hsl(240 10% 3.9%));
+  --color-foreground: light-dark(hsl(240 10% 3.9%), hsl(0 0% 98%));
 }
 
 @layer base {
@@ -23,5 +13,17 @@
 
   body {
     @apply bg-background text-foreground selection:bg-foreground selection:text-background;
+  }
+}
+
+@utility prose {
+  a {
+    color: inherit;
+    font-weight: var(--font-weight-regular);
+    text-underline-offset: 2px;
+
+    &:hover {
+      color: var(--tw-prose-links);
+    }
   }
 }

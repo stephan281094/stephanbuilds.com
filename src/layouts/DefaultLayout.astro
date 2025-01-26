@@ -16,7 +16,7 @@ const { title, description = SITE_DESCRIPTION, image } = Astro.props;
       image={image}
     />
   </head>
-  <body>
+  <body class="scheme-light-dark">
     <slot name="before-header" />
     <div class="relative flex min-h-[100dvh] flex-col">
       <Header />
