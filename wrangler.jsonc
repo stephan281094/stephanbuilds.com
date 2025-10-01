@@ -1,0 +1,25 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "stephanbuilds-com",
+  "main": "./dist/_worker.js/index.js",
+  // Update to today's date
+  "compatibility_date": "2025-08-15",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "binding": "ASSETS",
+    "directory": "./dist",
+  },
+  "routes": [
+    {
+      "pattern": "stephanbuilds.com",
+      "custom_domain": true,
+    },
+    {
+      "pattern": "stephandevries.com",
+      "custom_domain": true,
+    },
+  ],
+  "observability": {
+    "enabled": true,
+  },
+}
