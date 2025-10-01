@@ -2,8 +2,7 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "stephanbuilds-com",
   "main": "./dist/_worker.js/index.js",
-  // Update to today's date
-  "compatibility_date": "2025-08-15",
+  "compatibility_date": "2025-10-01",
   "compatibility_flags": ["nodejs_compat"],
   "assets": {
     "binding": "ASSETS",
