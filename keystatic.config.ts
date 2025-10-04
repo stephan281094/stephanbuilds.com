@@ -18,15 +18,7 @@ const projectSchema = {
       false: fields.empty(),
     },
   ),
-  content: fields.document({
-    label: "Content",
-    formatting: true,
-    dividers: true,
-    links: true,
-    images: {
-      publicPath: ".",
-    },
-  }),
+  content: fields.markdoc({ label: "Content" }),
 };
 
 export default config({
@@ -73,15 +65,7 @@ export default config({
         }),
         heroAlt: fields.text({ label: "Hero Alt" }),
         draft: fields.checkbox({ label: "Draft" }),
-        content: fields.document({
-          label: "Content",
-          formatting: true,
-          dividers: true,
-          links: true,
-          images: {
-            publicPath: ".",
-          },
-        }),
+        content: fields.markdoc({ label: "Content" }),
       },
     }),
     projects: collection({
