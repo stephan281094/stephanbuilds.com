@@ -14,31 +14,31 @@
   "dependencies": {
     "@astrojs/cloudflare": "^12.6.10",
     "@astrojs/markdoc": "^0.15.8",
-    "@astrojs/react": "^4.4.0",
+    "@astrojs/react": "^4.4.2",
     "@astrojs/rss": "^4.0.13",
     "@astrojs/sitemap": "^3.6.0",
     "@keystatic/astro": "^5.0.6",
     "@keystatic/core": "^0.5.48",
-    "astro": "^5.15.1",
+    "astro": "^5.15.4",
     "medium-zoom": "^1.1.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "satori": "^0.18.3",
-    "sharp": "^0.34.4",
-    "tailwindcss": "^4.1.16"
+    "sharp": "^0.34.5",
+    "tailwindcss": "^4.1.17"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.19",
-    "@tailwindcss/vite": "^4.1.16",
-    "@types/node": "^24.9.1",
+    "@tailwindcss/vite": "^4.1.17",
+    "@types/node": "^24.10.0",
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.2",
-    "knip": "^5.66.3",
+    "knip": "^5.68.0",
     "prettier": "^3.6.2",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.7.1",
     "typescript": "^5.9.3",
-    "wrangler": "^4.45.0"
+    "wrangler": "^4.46.0"
   },
   "packageManager": "pnpm@10.2.0+sha512.0d27364e0139c6aadeed65ada153135e0ca96c8da42123bd50047f961339dc7a758fc2e944b428f52be570d1bd3372455c1c65fa2e7aa0bfbf931190f9552001",
   "pnpm": {
