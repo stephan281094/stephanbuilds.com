@@ -21,20 +21,18 @@ const [page] = pathname.split("/").filter(Boolean);
           class="hover:bg-foreground/10 data-[active=true]:bg-foreground/10 rounded-sm px-2 py-1"
           data-active={page === "projects"}
           href="/projects"
-          data-astro-prefetch="viewport">Projects</a
+          data-astro-prefetch="viewport"
         >
-        <a
-          class="hover:bg-foreground/10 data-[active=true]:bg-foreground/10 rounded-sm px-2 py-1"
-          data-active={page === "blog"}
-          href="/blog"
-          data-astro-prefetch="viewport">Blog</a
-        >
+          Projects
+        </a>
         <a
           class="hover:bg-foreground/10 data-[active=true]:bg-foreground/10 rounded-sm px-2 py-1"
           data-active={page === "about"}
           href="/about"
-          data-astro-prefetch="viewport">About</a
+          data-astro-prefetch="viewport"
         >
+          About
+        </a>
       </div>
     </div>
   </div>
