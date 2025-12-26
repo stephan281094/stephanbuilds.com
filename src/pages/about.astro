@@ -1,13 +1,13 @@
 ---
 import { getEntry } from "astro:content";
 import SeedlingIcon from "../components/SeedlingIcon.astro";
-import DefaultLayout from "../layouts/DefaultLayout.astro";
+import Root from "../layouts/root.astro";
 
 const about = await getEntry("pages", "about");
 const { Content } = await about.render();
 ---
 
-<DefaultLayout title="About">
+<Root title="About">
   <main
     class="mx-auto flex w-full max-w-[65ch] flex-col gap-8 py-12 leading-normal"
   >
@@ -19,4 +19,4 @@ const { Content } = await about.render();
       <SeedlingIcon />
     </div>
   </main>
-</DefaultLayout>
+</Root>

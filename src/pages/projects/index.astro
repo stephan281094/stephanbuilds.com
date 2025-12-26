@@ -1,5 +1,5 @@
 ---
-import DefaultLayout from "../../layouts/DefaultLayout.astro";
+import Root from "../../layouts/root.astro";
 import ListItem from "../../components/ListItem.astro";
 import { getCollection } from "astro:content";
 
@@ -16,7 +16,7 @@ const sideProjects = sideProjectCollection
   .sort((a, b) => b.data.id - a.data.id);
 ---
 
-<DefaultLayout title="Projects">
+<Root title="Projects">
   <main
     class="mx-auto flex w-full max-w-[65ch] flex-col gap-8 py-12 leading-normal"
   >
@@ -59,4 +59,4 @@ const sideProjects = sideProjectCollection
       </div>
     </div>
   </main>
-</DefaultLayout>
+</Root>

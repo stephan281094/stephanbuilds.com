@@ -17,7 +17,7 @@ export async function GET({ props }: APIContext) {
     description: props.data.description,
   });
 
-  return new Response(ogImage, {
+  return new Response(Uint8Array.from(ogImage), {
     headers: {
       "Content-Type": "image/png",
     },

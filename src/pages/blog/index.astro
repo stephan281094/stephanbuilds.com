@@ -1,6 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import DefaultLayout from "../../layouts/DefaultLayout.astro";
+import Root from "../../layouts/root.astro";
 import ListItem from "../../components/ListItem.astro";
 
 const title = "Blog";
@@ -12,7 +12,7 @@ const posts = (await getCollection("blog"))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
-<DefaultLayout title={title} description={description}>
+<Root title={title} description={description}>
   <main
     class="mx-auto flex w-full max-w-[65ch] flex-col gap-8 py-12 leading-normal"
   >
@@ -35,4 +35,4 @@ const posts = (await getCollection("blog"))
       }
     </div>
   </main>
-</DefaultLayout>
+</Root>

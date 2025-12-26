@@ -4,7 +4,7 @@ const { description, imageUrl, imageAlt = "", href, title } = Astro.props;
 ---
 
 <a
-  class="grid grid-cols-4 gap-4 rounded-lg p-4 hover:bg-foreground/10 md:grid-cols-3 md:gap-8"
+  class="hover:bg-foreground/10 grid grid-cols-4 gap-4 rounded-lg p-4 md:grid-cols-3 md:gap-8"
   href={href}
   data-astro-prefetch
 >
@@ -14,7 +14,7 @@ const { description, imageUrl, imageAlt = "", href, title } = Astro.props;
     width="500"
     height="300"
     alt={imageAlt}
-    layout="responsive"
+    layout="constrained"
   />
   <div
     class="col-span-3 flex flex-col justify-center gap-2 md:col-span-2 md:gap-4"

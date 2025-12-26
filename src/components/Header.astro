@@ -4,7 +4,7 @@ const pathname = new URL(Astro.request.url).pathname;
 const [page] = pathname.split("/").filter(Boolean);
 ---
 
-<nav class="w-full md:mt-12">
+<header class="w-full md:mt-12">
   <div class="container mx-auto md:px-8">
     <div class="flex flex-row gap-4 p-4 sm:rounded-2xl">
       <div class="mr-auto flex flex-row">
@@ -38,4 +38,4 @@ const [page] = pathname.split("/").filter(Boolean);
       </div>
     </div>
   </div>
-</nav>
+</header>

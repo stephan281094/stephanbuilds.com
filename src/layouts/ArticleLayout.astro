@@ -1,11 +1,11 @@
 ---
 import { Image } from "astro:assets";
-import DefaultLayout from "./DefaultLayout.astro";
+import Root from "./root.astro";
 
 const { description, hero, heroAlt = "", image, title } = Astro.props;
 ---
 
-<DefaultLayout title={title} description={description} image={image}>
+<Root title={title} description={description} image={image}>
   <article
     class="mx-auto flex w-full max-w-[65ch] flex-col gap-8 py-12 leading-normal"
   >
@@ -17,7 +17,7 @@ const { description, hero, heroAlt = "", image, title } = Astro.props;
       <div class="hero-image">
         {
           hero && (
-            <div class="flex aspect-[2/1] rounded-sm bg-gray-100 select-none dark:bg-gray-900">
+            <div class="flex aspect-2/1 rounded-sm bg-gray-100 select-none dark:bg-gray-900">
               <Image
                 class="rounded-md"
                 data-zoomable
@@ -26,7 +26,7 @@ const { description, hero, heroAlt = "", image, title } = Astro.props;
                 src={hero}
                 alt={heroAlt}
                 loading="eager"
-                layout="responsive"
+                layout="constrained"
               />
             </div>
           )
@@ -51,4 +51,4 @@ const { description, hero, heroAlt = "", image, title } = Astro.props;
       container: ".zoom-container",
     });
   </script>
-</DefaultLayout>
+</Root>

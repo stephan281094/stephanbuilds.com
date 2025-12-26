@@ -1,11 +1,11 @@
 ---
 import SeedlingIcon from "../components/SeedlingIcon.astro";
 import { LOCATION } from "../consts";
-import DefaultLayout from "../layouts/DefaultLayout.astro";
+import Root from "../layouts/root.astro";
 ---
 
-<DefaultLayout>
-  <main class="flex flex-1 flex-col p-8 md:p-12">
+<Root>
+  <main class="container mx-auto flex flex-1 flex-col p-8 md:p-12">
     <div
       class="my-auto inline-flex max-w-3xl flex-col gap-8 rounded-2xl px-2 py-4 pb-16 text-3xl leading-normal"
     >
@@ -19,9 +19,7 @@ import DefaultLayout from "../layouts/DefaultLayout.astro";
       </p>
     </div>
     <div class="flex items-end">
-      <SeedlingIcon
-        class="ml-auto flex-shrink-0 fill-[currentColor] stroke-2"
-      />
+      <SeedlingIcon class="ml-auto shrink-0 fill-[currentColor] stroke-2" />
     </div>
   </main>
-</DefaultLayout>
+</Root>
