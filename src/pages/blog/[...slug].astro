@@ -1,7 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import FormattedDate from "../../components/FormattedDate.astro";
-import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import Article from "../../layouts/article.astro";
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog");
@@ -18,17 +17,25 @@ const { data, slug } = Astro.props;
 const { Content } = await Astro.props.render();
 ---
 
-<ArticleLayout
+<Article
   title={data.title}
   description={data.description}
   hero={data.hero}
   heroAlt={data.heroAlt}
   image={`/blog/${slug}.png`}
 >
-  <FormattedDate
+  <time
+    datetime={data.pubDate.toISOString()}
     class="text-gray-600 dark:text-gray-400"
-    date={data.pubDate}
     slot="subtitle"
-  />
+  >
+    {
+      data.pubDate.toLocaleDateString("en-us", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      })
+    }
+  </time>
   <Content />
-</ArticleLayout>
+</Article>

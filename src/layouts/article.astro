@@ -2,6 +2,14 @@
 import { Image } from "astro:assets";
 import Root from "./root.astro";
 
+interface Props {
+  description?: string;
+  hero?: any; // FIXME
+  heroAlt?: string;
+  image?: string;
+  title: string;
+}
+
 const { description, hero, heroAlt = "", image, title } = Astro.props;
 ---
 
