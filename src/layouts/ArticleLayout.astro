@@ -7,10 +7,10 @@ const { description, hero, heroAlt = "", image, title } = Astro.props;
 
 <Root title={title} description={description} image={image}>
   <article
-    class="mx-auto flex w-full max-w-[65ch] flex-col gap-8 py-12 leading-normal"
+    class="mx-auto flex w-full max-w-[65ch] flex-col gap-8 py-6 leading-normal md:py-12"
   >
     <div class="flex flex-col gap-8 px-6">
-      <h1 class="text-3xl">{title}</h1>
+      <h1 class="text-2xl/normal font-medium md:text-3xl/normal">{title}</h1>
       <div class="text-gray-600 dark:text-gray-400">
         <slot name="subtitle" />
       </div>

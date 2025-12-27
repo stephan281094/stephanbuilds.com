@@ -1,25 +1,27 @@
 ---
-import SeedlingIcon from "../components/SeedlingIcon.astro";
 import { LOCATION } from "../consts";
 import Root from "../layouts/root.astro";
 ---
 
 <Root>
-  <main class="container mx-auto flex flex-1 flex-col p-8 md:p-12">
-    <div
-      class="my-auto inline-flex max-w-3xl flex-col gap-8 rounded-2xl px-2 py-4 pb-16 text-3xl leading-normal"
-    >
-      <p>
-        Hey, I'm Stephan, a freelance web developer passionate about building <span
-          class="whitespace-nowrap">high-quality websites</span
-        >.
-      </p>
-      <p class="text-xl">
-        Working remotely from <span class="italic">{LOCATION}</span>
-      </p>
-    </div>
-    <div class="flex items-end">
-      <SeedlingIcon class="ml-auto shrink-0 fill-[currentColor] stroke-2" />
-    </div>
+  <main class="flex flex-1 flex-col gap-6 md:gap-12">
+    <section class="container m-auto flex min-h-[60dvh] flex-col p-6 md:p-12">
+      <div
+        class:list={[
+          "my-auto flex max-w-4xl origin-left flex-col justify-center gap-6 text-2xl/normal text-pretty md:text-4xl/normal",
+          "animate-[scale_ease-out_forwards] [animation-range:0_50dvh] [animation-timeline:scroll()]",
+        ]}
+      >
+        <p class="font-medium">
+          Hey, I'm Stephan. Freelance web developer passionate about building
+          high-quality websites.
+        </p>
+        <p class="text-lg text-stone-500 md:text-2xl">
+          Working remotely from <span class="italic">
+            {LOCATION}
+          </span>
+        </p>
+      </div>
+    </section>
   </main>
 </Root>
