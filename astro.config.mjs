@@ -27,7 +27,7 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
     ssr: {
-      external: ["node:fs/promises"],
+      external: ["node:fs/promises", "medium-zoom"],
     },
   },
 });
