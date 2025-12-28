@@ -4,8 +4,11 @@ const projectSchema = {
   id: fields.integer({ label: "Project order" }),
   title: fields.slug({ name: { label: "Title" } }),
   description: fields.text({ label: "Description", multiline: true }),
-  imageUrl: fields.text({ label: "Hero image " }),
-  imageAlt: fields.text({ label: "Hero Alt" }),
+  hero: fields.image({
+    label: "Hero Image",
+    publicPath: ".",
+  }),
+  heroAlt: fields.text({ label: "Hero Alt" }),
   draft: fields.checkbox({ label: "Draft" }),
   when: fields.text({ label: "When" }),
   client: fields.conditional(

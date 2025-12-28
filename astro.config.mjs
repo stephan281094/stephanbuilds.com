@@ -12,9 +12,6 @@ export default defineConfig({
   site: SITE_URL,
   adapter: cloudflare({ imageService: "compile" }),
   output: "server",
-  image: {
-    domains: ["picsum.photos"],
-  },
   prefetch: true,
   integrations: [
     sitemap({

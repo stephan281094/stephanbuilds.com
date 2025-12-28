@@ -34,8 +34,8 @@ const sideProjects = sideProjectCollection
             href={`/projects/${project.slug}`}
             title={project.data.title}
             description={project.data.description}
-            imageUrl={project.data.imageUrl}
-            imageAlt={project.data.imageAlt}
+            imageUrl={project.data.hero}
+            imageAlt={project.data.heroAlt}
           />
         ))
       }
@@ -52,7 +52,8 @@ const sideProjects = sideProjectCollection
               href={`/projects/${project.slug}`}
               title={project.data.title}
               description={project.data.description}
-              imageUrl={project.data.imageUrl}
+              imageUrl={project.data.hero}
+              imageAlt={project.data.heroAlt}
             />
           ))
         }

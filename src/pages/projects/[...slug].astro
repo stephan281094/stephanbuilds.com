@@ -25,8 +25,8 @@ const { Content } = await Astro.props.render();
 <Article
   title={project.title}
   description={project.description}
-  hero={project.imageUrl}
-  heroAlt=""
+  hero={project.hero}
+  heroAlt={project.heroAlt}
 >
   <Fragment slot="subtitle">
     <span>{project.when}</span>

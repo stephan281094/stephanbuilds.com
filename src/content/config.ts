@@ -1,26 +1,28 @@
-import { defineCollection, z } from "astro:content";
+import { defineCollection, z, type ImageFunction } from "astro:content";
 
-const projectSchema = z.object({
-  id: z.number(),
-  title: z.string(),
-  description: z.string(),
-  draft: z.boolean().optional(),
-  imageUrl: z.string(),
-  imageAlt: z.string().optional(),
-  when: z.string().or(z.number()),
-  client: z.union([
-    z.object({
-      discriminant: z.literal(false),
-    }),
-    z.object({
-      discriminant: z.literal(true),
-      value: z.object({
-        name: z.string(),
-        website: z.string(),
+function projectSchema(image: ImageFunction) {
+  return z.object({
+    id: z.number(),
+    title: z.string(),
+    description: z.string(),
+    draft: z.boolean().optional(),
+    hero: image().optional(),
+    heroAlt: z.string().optional(),
+    when: z.string().or(z.number()),
+    client: z.union([
+      z.object({
+        discriminant: z.literal(false),
       }),
-    }),
-  ]),
-});
+      z.object({
+        discriminant: z.literal(true),
+        value: z.object({
+          name: z.string(),
+          website: z.string(),
+        }),
+      }),
+    ]),
+  });
+}
 
 const blog = defineCollection({
   schema: ({ image }) =>
@@ -38,11 +40,11 @@ const blog = defineCollection({
 });
 
 const projects = defineCollection({
-  schema: projectSchema,
+  schema: ({ image }) => projectSchema(image),
 });
 
 const sideProjects = defineCollection({
-  schema: projectSchema,
+  schema: ({ image }) => projectSchema(image),
 });
 
 const pages = defineCollection({
