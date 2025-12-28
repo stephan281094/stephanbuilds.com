@@ -3,6 +3,8 @@ import { getCollection } from "astro:content";
 import Root from "../../layouts/root.astro";
 import ListItem from "../../components/list-item.astro";
 
+export const prerender = true;
+
 const title = "Blog";
 const description =
   "A collections of thoughts, either related to animal rights, philosophy, minimalism or programming.";

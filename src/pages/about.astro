@@ -3,6 +3,8 @@ import { getEntry } from "astro:content";
 import SeedlingIcon from "../components/seedling-icon.astro";
 import Root from "../layouts/root.astro";
 
+export const prerender = true;
+
 const about = await getEntry("pages", "about")!;
 const { Content } = await about.render();
 ---

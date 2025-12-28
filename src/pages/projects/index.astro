@@ -3,6 +3,8 @@ import Root from "../../layouts/root.astro";
 import ListItem from "../../components/list-item.astro";
 import { getCollection } from "astro:content";
 
+export const prerender = true;
+
 const [projectCollection, sideProjectCollection] = await Promise.all([
   getCollection("projects"),
   getCollection("side-projects"),
