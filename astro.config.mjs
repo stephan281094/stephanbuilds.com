@@ -11,7 +11,7 @@ import { SITE_URL } from "./src/consts";
 export default defineConfig({
   site: SITE_URL,
   adapter: cloudflare({ imageService: "compile" }),
-  output: "static",
+  output: "server",
   image: {
     domains: ["picsum.photos"],
   },

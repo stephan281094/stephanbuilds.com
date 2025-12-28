@@ -2,6 +2,8 @@ import type { APIContext } from "astro";
 import { getCollection } from "astro:content";
 import { generateOgImage } from "../../lib/satori";
 
+export const prerender = true;
+
 export async function getStaticPaths() {
   const posts = await getCollection("blog");
 
