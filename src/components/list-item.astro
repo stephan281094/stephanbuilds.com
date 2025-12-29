@@ -11,8 +11,9 @@ const { description, imageUrl, imageAlt = "", href, title } = Astro.props;
     src={imageUrl}
     width="700"
     height="420"
+    widths={[174, 587]}
+    sizes="(max-width: 48rem) 587px, 174px"
     alt={imageAlt}
-    layout="full-width"
   />
   <div class="flex flex-col justify-center gap-2 md:col-span-2 md:gap-4">
     <a href={href} data-astro-prefetch class="text-lg font-medium">
