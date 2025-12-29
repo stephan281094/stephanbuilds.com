@@ -1,29 +1,33 @@
 ---
 import { Image } from "astro:assets";
-const { description, imageUrl, imageAlt = "", href, title } = Astro.props;
+const props = Astro.props;
 ---
 
 <article
-  class="hover:bg-foreground/10 relative grid gap-4 rounded-lg p-4 md:grid-cols-3 md:gap-8"
+  class:list={[
+    "hover:bg-foreground/10 relative grid gap-4 rounded-lg p-4 md:grid-cols-3 md:gap-8",
+    props.class,
+  ]}
+  style={props.style}
 >
   <Image
     class="aspect-2/1 rounded-md object-cover md:aspect-video md:rounded-sm"
-    src={imageUrl}
+    src={props.imageUrl}
     width="700"
     height="420"
     widths={[174, 587]}
     sizes="(max-width: 48rem) 587px, 174px"
-    alt={imageAlt}
+    alt={props.imageAlt || ""}
   />
   <div class="flex flex-col justify-center gap-2 md:col-span-2 md:gap-4">
-    <a href={href} data-astro-prefetch class="text-lg font-medium">
+    <a href={props.href} data-astro-prefetch class="text-lg font-medium">
       <span class="absolute inset-0"></span>
-      {title}
+      {props.title}
     </a>
     <p
-      class="line-clamp-2 text-sm text-gray-600 md:text-base dark:text-gray-400"
+      class="line-clamp-2 text-sm text-stone-600 md:text-base dark:text-stone-400"
     >
-      {description}
+      {props.description}
     </p>
   </div>
 </article>

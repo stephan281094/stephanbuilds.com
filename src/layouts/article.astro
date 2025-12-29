@@ -19,13 +19,13 @@ const { description, hero, heroAlt = "", image, title } = Astro.props;
   >
     <div class="flex flex-col gap-8 px-6">
       <h1 class="text-2xl/normal font-medium md:text-3xl/normal">{title}</h1>
-      <div class="text-gray-600 dark:text-gray-400">
+      <div class="text-stone-600 dark:text-stone-400">
         <slot name="subtitle" />
       </div>
       <div class="hero-image">
         {
           hero && (
-            <div class="flex aspect-2/1 rounded-sm bg-gray-100 select-none dark:bg-gray-900">
+            <div class="flex aspect-2/1 rounded-sm bg-stone-100 select-none dark:bg-stone-900">
               <Image
                 class="aspect-2/1 rounded-md object-cover"
                 data-zoomable
