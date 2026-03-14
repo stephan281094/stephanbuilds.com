@@ -1,10 +1,11 @@
 ---
+import type { ImageMetadata } from "astro";
 import { Image } from "astro:assets";
 import Root from "./root.astro";
 
 interface Props {
   description?: string;
-  hero?: any; // FIXME
+  hero?: ImageMetadata | undefined;
   heroAlt?: string | undefined;
   image?: string;
   title: string;

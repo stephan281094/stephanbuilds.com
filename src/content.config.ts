@@ -1,4 +1,6 @@
-import { defineCollection, z, type ImageFunction } from "astro:content";
+import { glob } from "astro/loaders";
+import { z } from "astro/zod";
+import { defineCollection, type ImageFunction } from "astro:content";
 
 function projectSchema(image: ImageFunction) {
   return z.object({
@@ -25,6 +27,7 @@ function projectSchema(image: ImageFunction) {
 }
 
 const blog = defineCollection({
+  loader: glob({ pattern: "**/*.mdoc", base: "./src/content/blog" }),
   schema: ({ image }) =>
     z.object({
       title: z.string(),
@@ -40,14 +43,17 @@ const blog = defineCollection({
 });
 
 const projects = defineCollection({
+  loader: glob({ pattern: "**/*.mdoc", base: "./src/content/projects" }),
   schema: ({ image }) => projectSchema(image),
 });
 
 const sideProjects = defineCollection({
+  loader: glob({ pattern: "**/*.mdoc", base: "./src/content/side-projects" }),
   schema: ({ image }) => projectSchema(image),
 });
 
 const pages = defineCollection({
+  loader: glob({ pattern: "**/*.mdoc", base: "./src/content/pages" }),
   schema: z.object({}),
 });
 

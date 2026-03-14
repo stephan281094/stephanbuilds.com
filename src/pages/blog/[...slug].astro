@@ -1,5 +1,5 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 import Article from "../../layouts/article.astro";
 
 export const prerender = true;
@@ -10,29 +10,29 @@ export async function getStaticPaths() {
   return posts
     .filter((post) => !post.data.draft)
     .map((post) => ({
-      params: { slug: post.slug },
-      props: post,
+      params: { slug: post.id },
+      props: { post },
     }));
 }
 
-const { data, slug } = Astro.props;
-const { Content } = await Astro.props.render();
+const { post } = Astro.props;
+const { Content } = await render(post);
 ---
 
 <Article
-  title={data.title}
-  description={data.description}
-  hero={data.hero}
-  heroAlt={data.heroAlt}
-  image={`/blog/${slug}.png`}
+  title={post.data.title}
+  description={post.data.description}
+  hero={post.data.hero}
+  heroAlt={post.data.heroAlt}
+  image={`/blog/${post.id}.png`}
 >
   <time
-    datetime={data.pubDate.toISOString()}
+    datetime={post.data.pubDate.toISOString()}
     class="text-stone-600 dark:text-stone-400"
     slot="subtitle"
   >
     {
-      data.pubDate.toLocaleDateString("en-us", {
+      post.data.pubDate.toLocaleDateString("en-us", {
         year: "numeric",
         month: "long",
         day: "numeric",

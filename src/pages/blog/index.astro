@@ -27,7 +27,7 @@ const posts = (await getCollection("blog"))
       {
         posts.map((post) => (
           <ListItem
-            href={`/blog/${post.slug}`}
+            href={`/blog/${post.id}`}
             title={post.data.title}
             description={post.data.description}
             imageUrl={post.data.hero}

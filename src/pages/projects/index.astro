@@ -33,7 +33,7 @@ const sideProjects = sideProjectCollection
       {
         projects.map((project) => (
           <ListItem
-            href={`/projects/${project.slug}`}
+            href={`/projects/${project.id}`}
             title={project.data.title}
             description={project.data.description}
             imageUrl={project.data.hero}
@@ -51,7 +51,7 @@ const sideProjects = sideProjectCollection
         {
           sideProjects.map((project) => (
             <ListItem
-              href={`/projects/${project.slug}`}
+              href={`/projects/${project.id}`}
               title={project.data.title}
               description={project.data.description}
               imageUrl={project.data.hero}

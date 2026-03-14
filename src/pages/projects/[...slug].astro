@@ -1,5 +1,5 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 import Article from "../../layouts/article.astro";
 
 export const prerender = true;
@@ -13,32 +13,32 @@ export async function getStaticPaths() {
   return [...projects, ...sideProjects]
     .filter((project) => !project.data.draft)
     .map((project) => ({
-      params: { slug: project.slug },
-      props: project,
+      params: { slug: project.id },
+      props: { project },
     }));
 }
 
-const project = Astro.props.data;
-const { Content } = await Astro.props.render();
+const { project } = Astro.props;
+const { Content } = await render(project);
 ---
 
 <Article
-  title={project.title}
-  description={project.description}
-  hero={project.hero}
-  heroAlt={project.heroAlt}
+  title={project.data.title}
+  description={project.data.description}
+  hero={project.data.hero}
+  heroAlt={project.data.heroAlt}
 >
   <Fragment slot="subtitle">
-    <span>{project.when}</span>
+    <span>{project.data.when}</span>
     {
-      project.client.discriminant && (
+      project.data.client.discriminant && (
         <span>
           for{" "}
           <a
             class="hover:text-foreground underline underline-offset-2"
-            href={project.client.value.website}
+            href={project.data.client.value.website}
           >
-            {project.client.value.name}
+            {project.data.client.value.name}
           </a>
         </span>
       )
