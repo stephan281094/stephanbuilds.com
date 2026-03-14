@@ -3,7 +3,6 @@
   "name": "stephanbuilds-com",
   "main": "@astrojs/cloudflare/entrypoints/server",
   "compatibility_date": "2025-10-01",
-  "compatibility_flags": ["nodejs_compat"],
   "assets": {
     "binding": "ASSETS",
     "directory": "./dist",
