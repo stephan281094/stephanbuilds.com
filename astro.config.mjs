@@ -8,7 +8,7 @@ import { SITE_URL } from "./src/consts";
 // https://astro.build/config
 export default defineConfig({
   site: SITE_URL,
-  adapter: cloudflare({ imageService: "cloudflare" }),
+  adapter: cloudflare({ imageService: "compile" }),
   output: "server",
   prefetch: true,
   integrations: [
