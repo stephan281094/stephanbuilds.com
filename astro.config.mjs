@@ -1,8 +1,6 @@
 import cloudflare from "@astrojs/cloudflare";
 import markdoc from "@astrojs/markdoc";
-import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
-import keystatic from "@keystatic/astro";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "astro/config";
 import { SITE_URL } from "./src/consts";
@@ -17,14 +15,12 @@ export default defineConfig({
     sitemap({
       filter: (page) => !page.includes("keystatic"),
     }),
-    react(),
     markdoc(),
-    keystatic(),
   ],
   vite: {
     plugins: [tailwindcss()],
     ssr: {
-      external: ["node:fs/promises", "medium-zoom"],
+      external: ["medium-zoom"],
     },
   },
 });
